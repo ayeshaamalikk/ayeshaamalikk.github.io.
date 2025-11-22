@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ayesha Malik – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #0b1020;
+      color: #f7f7ff;
+      line-height: 1.6;
+    }
+    header {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #242842;
+    }
+    header h1 {
+      margin-bottom: 0.4rem;
+      font-size: 2.3rem;
+    }
+    header p {
+      margin: 0.1rem 0;
+      color: #b3b8ff;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #242842;
+      padding-bottom: 0.4rem;
+    }
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .project {
+      padding: 1rem 0;
+      border-bottom: 1px solid #242842;
+    }
+    .project:last-child {
+      border-bottom: none;
+    }
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .project-tags {
+      font-size: 0.85rem;
+      color: #8f95ff;
+      margin-bottom: 0.3rem;
+    }
+    a {
+      color: #8f95ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid #242842;
+      font-size: 0.8rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: #777cff;
+      border-top: 1px solid #242842;
+      background: #050814;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Developer • Researcher • Problem Solver</p>
+    <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About</h2>
+      <p>
+        Short 2–3 sentence blurb about who you are, what you care about,
+        and what you like building.
+      </p>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+      <ul class="project-list">
+        <li class="project">
+          <div class="project-title">Project Name #1</div>
+          <div class="project-tags">Python • Machine Learning • API</div>
+          <p>
+            One or two sentences about what this project does and why it matters.
+            <a href="https://github.com/yourusername/project-repo" target="_blank">View on GitHub →</a>
+          </p>
+        </li>
+        <li class="project">
+          <div class="project-title">Project Name #2</div>
+          <div class="project-tags">Unity • VR • Human-Robot Interaction</div>
+          <p>
+            Brief description of the problem, your solution, and impact.
+            <a href="#" target="_blank">View on GitHub →</a>
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div>
+        <span class="pill">Python</span>
+        <span class="pill">C# / Unity</span>
+        <span class="pill">Machine Learning</span>
+        <span class="pill">Web Development</span>
+        <span class="pill">Data Analysis</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:youremail@example.com">youremail@example.com</a><br/>
+        LinkedIn: <a href="https://linkedin.com/in/your-handle" target="_blank">your-handle</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Your Name
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
