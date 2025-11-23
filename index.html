@@ -2,154 +2,925 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ayesha Malik – Portfolio</title>
+  <title>Ayesha A. Malik</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ayesha A. Malik - Computer Science Researcher and Artist at University of Central Florida" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    * {
       margin: 0;
-      background: #0b1020;
-      color: #f7f7ff;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --text-primary: #2d2d2d;
+      --text-secondary: #4a4a4a;
+      --accent: #b8403a;
+      --border: #e5e5e5;
+    }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 3rem;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    nav li {
+      margin-left: 2.5rem;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section with About */
+    .hero {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 8rem 3rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 4rem;
+      align-items: start;
+      min-height: 100vh;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .hero-content .position {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
       line-height: 1.6;
     }
-    header {
-      padding: 3rem 1.5rem;
-      text-align: center;
-      border-bottom: 1px solid #242842;
+
+    .hero-content p {
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      line-height: 1.8;
     }
-    header h1 {
-      margin-bottom: 0.4rem;
-      font-size: 2.3rem;
+
+    .hero-content a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
     }
-    header p {
-      margin: 0.1rem 0;
-      color: #b3b8ff;
+
+    .hero-content a:hover {
+      border-bottom-color: var(--accent);
     }
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+
+    .hero-content .tagline {
+      font-style: italic;
+      margin-top: 2rem;
+      color: var(--text-secondary);
     }
-    section {
-      margin-bottom: 2.5rem;
+
+    /* Profile Image */
+    .profile-section {
+      position: sticky;
+      top: 120px;
     }
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-      border-bottom: 1px solid #242842;
-      padding-bottom: 0.4rem;
+
+    .profile-image {
+      width: 100%;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     }
-    .project-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
-    .project {
-      padding: 1rem 0;
-      border-bottom: 1px solid #242842;
-    }
-    .project:last-child {
-      border-bottom: none;
-    }
-    .project-title {
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-    .project-tags {
-      font-size: 0.85rem;
-      color: #8f95ff;
-      margin-bottom: 0.3rem;
-    }
-    a {
-      color: #8f95ff;
+
+    .social-icons a {
+      color: var(--accent);
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
     }
-    .pill {
-      display: inline-block;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid #242842;
-      font-size: 0.8rem;
-      margin-right: 0.3rem;
+
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 3rem 5rem;
+    }
+
+    section {
+      margin-bottom: 5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      color: var(--text-primary);
+      text-transform: lowercase;
+    }
+
+    /* Image Carousel */
+    .carousel-container {
+      position: relative;
+      max-width: 900px;
+      margin: 3rem auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+      padding: 2rem;
+      font-size: 1rem;
+    }
+
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-nav:hover {
+      background: white;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .carousel-nav.prev {
+      left: 20px;
+    }
+
+    .carousel-nav.next {
+      right: 20px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      padding: 0;
+    }
+
+    .dot.active {
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-meta {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .card-content {
+      color: var(--text-primary);
+      line-height: 1.8;
+    }
+
+    .card-content ul {
+      margin-left: 1.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .card-content li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* Publications */
+    .publication {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .publication:last-child {
+      border-bottom: none;
+    }
+
+    .pub-venue {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pub-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .pub-authors {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+
+    .pub-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .pub-link:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* Awards */
+    .award {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .award:last-child {
+      border-bottom: none;
+    }
+
+    .award-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .award-content h3 {
+      color: var(--text-primary);
+      font-size: 1.15rem;
       margin-bottom: 0.3rem;
+      font-weight: 600;
     }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
+
+    .award-date {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      font-style: italic;
+    }
+
+    .award-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Personal Projects */
+    .project-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .project-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 1rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: #f5f5f5;
+      color: var(--text-secondary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 3px;
       font-size: 0.85rem;
-      color: #777cff;
-      border-top: 1px solid #242842;
-      background: #050814;
+      border: 1px solid var(--border);
+    }
+
+    /* Footer */
+    footer {
+      background: #fafafa;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 6rem 2rem 3rem;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+
+      .profile-section {
+        position: relative;
+        top: 0;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      nav li {
+        margin-left: 1.5rem;
+      }
+
+      .container {
+        padding: 2rem 2rem 4rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .carousel-slide img {
+        height: 350px;
+      }
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Your Name</h1>
-    <p>Developer • Researcher • Problem Solver</p>
-    <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-  </header>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">about</a></li>
+      <li><a href="#research">research</a></li>
+      <li><a href="#publications">publications</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </nav>
 
-  <main>
-    <section>
-      <h2>About</h2>
-      <p>
-        Short 2–3 sentence blurb about who you are, what you care about,
-        and what you like building.
+  <!-- Hero Section with About -->
+  <section class="hero" id="about">
+    <div class="hero-content">
+      <h1>Ayesha A. Malik</h1>
+      <p class="position">
+        Undergraduate Researcher | University of Central Florida<br>
+        B.S. in Computer Science (Graduating December 2025)
       </p>
+
+      <p>
+        Hi There! I'm a senior Computer Science student at the University of Central Florida. Check out my work below!
+      </p>
+
+      <p>
+        
+      </p>
+
+      <p>
+        
+      </p>
+
+      <p>
+        Beyond research, I enjoy painting, woodworking, sewing, and building electronics. I'm also the Secretary 
+        of <a href="#" target="_blank">Project Downtown Orlando</a>, a local non-profit reaching over 800 
+        individuals in need every month.
+      </p>
+
+      <p class="tagline">
+        I like mischief, adventures, and mornings.
+      </p>
+    </div>
+
+    <div class="profile-section">
+      <img src="https://via.placeholder.com/400x400/b8403a/ffffff?text=Your+Photo" alt="Ayesha A. Malik" class="profile-image">
+      <div class="social-icons">
+        <a href="mailto:ayesha@example.com" title="Email">✉️</a>
+        <a href="https://github.com/ayeshaamalikk" target="_blank" title="GitHub">🔗</a>
+        <a href="https://linkedin.com/in/ayesha-malik" target="_blank" title="LinkedIn">💼</a>
+        <a href="#" target="_blank" title="Portfolio">🦋</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Carousel -->
+  <div class="container">
+    <section>
+      <h2 class="section-title">gallery</h2>
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <div class="carousel-slide">
+            <img src="https://via.placeholder.com/900x500/b8403a/ffffff?text=Painting+1" alt="Artwork 1">
+            <div class="carousel-caption">My paintings - a lifelong passion</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://via.placeholder.com/900x500/8b6f47/ffffff?text=Woodworking" alt="Woodworking project">
+            <div class="carousel-caption">Custom woodworking projects</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://via.placeholder.com/900x500/6366f1/ffffff?text=Iron+Man+Helmet" alt="Iron Man Helmet">
+            <div class="carousel-caption">Arduino-controlled Iron Man Helmet</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://via.placeholder.com/900x500/059669/ffffff?text=Research" alt="Research">
+            <div class="carousel-caption">Research and collaboration</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://via.placeholder.com/900x500/dc2626/ffffff?text=Volunteer+Work" alt="Volunteer work">
+            <div class="carousel-caption">Volunteering with Project Downtown Orlando</div>
+          </div>
+        </div>
+        <button class="carousel-nav prev" onclick="moveSlide(-1)">‹</button>
+        <button class="carousel-nav next" onclick="moveSlide(1)">›</button>
+      </div>
+      <div class="carousel-dots" id="dots"></div>
     </section>
 
-    <section>
-      <h2>Selected Projects</h2>
-      <ul class="project-list">
-        <li class="project">
-          <div class="project-title">Project Name #1</div>
-          <div class="project-tags">Python • Machine Learning • API</div>
-          <p>
-            One or two sentences about what this project does and why it matters.
-            <a href="https://github.com/yourusername/project-repo" target="_blank">View on GitHub →</a>
-          </p>
-        </li>
-        <li class="project">
-          <div class="project-title">Project Name #2</div>
-          <div class="project-tags">Unity • VR • Human-Robot Interaction</div>
-          <p>
-            Brief description of the problem, your solution, and impact.
-            <a href="#" target="_blank">View on GitHub →</a>
-          </p>
-        </li>
-      </ul>
-    </section>
+    <!-- Research Experience -->
+    <section id="research">
+      <h2 class="section-title">research experience</h2>
 
-    <section>
-      <h2>Skills</h2>
-      <div>
-        <span class="pill">Python</span>
-        <span class="pill">C# / Unity</span>
-        <span class="pill">Machine Learning</span>
-        <span class="pill">Web Development</span>
-        <span class="pill">Data Analysis</span>
+      <div class="card">
+        <div class="card-title">NSF REU – Multi-Omics Data Integration</div>
+        <div class="card-meta">University of Central Florida | Oct 2024 – Feb 2025</div>
+        <div class="card-content">
+          <p><strong>Award #2246796:</strong> Developing computational methods for integrating multi-dimensional biological data to improve phenome prediction.</p>
+          <ul>
+            <li>Produced survey paper reviewing ML algorithms for analyzing cell composition and gene expression patterns</li>
+            <li>Preprocessed and annotated dataset of 45,000 gene expression samples</li>
+            <li>Set up, trained, and evaluated 8 different cell deconvolution algorithms</li>
+            <li>Performed statistical analysis and fine-tuned parameters to optimize accuracy</li>
+          </ul>
+        </div>
+        <div class="tags">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Bioinformatics</span>
+          <span class="tag">Python</span>
+          <span class="tag">Data Analysis</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">NSF REU – VR for Autism Assessment</div>
+        <div class="card-meta">Texas State University | June 2024 – July 2024</div>
+        <div class="card-content">
+          <p><strong>Award #2150135:</strong> Developed a VR tool in Unity to test motor skills of children with Autism.</p>
+          <ul>
+            <li>Processed resulting data and tested various ML supervised regression models</li>
+            <li>Determined level of motor delay and most influential components of movement</li>
+            <li>🏆 Received first place in REU program poster presentation competition</li>
+            <li>Published paper as first author in IEEE UEMCON 2024</li>
+          </ul>
+        </div>
+        <div class="tags">
+          <span class="tag">Unity</span>
+          <span class="tag">Virtual Reality</span>
+          <span class="tag">C#</span>
+          <span class="tag">Machine Learning</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">NSF REU – Multimodal VR Data Logging</div>
+        <div class="card-meta">University of Central Florida | Jan 2024 – May 2024</div>
+        <div class="card-content">
+          <p><strong>Award #2232448:</strong> Creating a tool to log multimodal data in VR for ML applications.</p>
+          <ul>
+            <li>Developed WebSocket application to live display data on web browser for remote streaming</li>
+            <li>Created all documentation for the project codebase</li>
+            <li>Conducted participants through VR study and managed resulting data</li>
+            <li>Contributed to publication as second author (IEEE VR 2024)</li>
+          </ul>
+        </div>
+        <div class="tags">
+          <span class="tag">Virtual Reality</span>
+          <span class="tag">WebSocket</span>
+          <span class="tag">Unity</span>
+          <span class="tag">Web Development</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Honors Undergraduate Thesis</div>
+        <div class="card-meta">University of Central Florida | Aug 2023 – May 2024</div>
+        <div class="card-content">
+          <p>
+            Developed, proposed, and defended thesis exploring the effects of Humanoid Visual Alterations 
+            on Task Performance and User Perceptions During Human-Robot Interaction in Virtual Reality.
+          </p>
+        </div>
+        <div class="tags">
+          <span class="tag">HRI</span>
+          <span class="tag">Virtual Reality</span>
+          <span class="tag">User Studies</span>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:youremail@example.com">youremail@example.com</a><br/>
-        LinkedIn: <a href="https://linkedin.com/in/your-handle" target="_blank">your-handle</a>
-      </p>
-    </section>
-  </main>
+    <!-- Publications -->
+    <section id="publications">
+      <h2 class="section-title">selected work</h2>
 
+      <div class="publication">
+        <div class="pub-venue">Genome Biology 2025</div>
+        <div class="pub-title">MOADE: high-resolution digital dissociation with deep multimodal autoencoder</div>
+        <div class="pub-authors">
+          Sun, J.*, Malik, A.*, Lin, T. et al. (* co-first author)
+        </div>
+        <a href="https://doi.org/10.1186/s13059-025-03805-1" target="_blank" class="pub-link">
+          view paper →
+        </a>
+      </div>
+
+      <div class="publication">
+        <div class="pub-venue">ICIBM 2025</div>
+        <div class="pub-title">Benchmarking cellular deconvolution algorithms to predict cell proportions: A literature review</div>
+        <div class="pub-authors">
+          Bratton, A., Malik, A. A., Sun, J., Li, Q., & Zhang, W.
+        </div>
+        <a href="#" target="_blank" class="pub-link">
+          preprint link →
+        </a>
+      </div>
+
+      <div class="publication">
+        <div class="pub-venue">IEEE UEMCON 2024</div>
+        <div class="pub-title">Virtual Reality on Assessing the Motor Skills of Individuals with Autism Spectrum Disorder</div>
+        <div class="pub-authors">
+          Malik, A. A., Zaki, A. M., Tran, N. C., Liang, I. X., Liu, T., & Valles, D.
+        </div>
+        <a href="https://ieeexplore.ieee.org/document/10754723" target="_blank" class="pub-link">
+          view paper →
+        </a>
+      </div>
+
+      <div class="publication">
+        <div class="pub-venue">IEEE VR 2024</div>
+        <div class="pub-title">CLOVR: Collecting and Logging OpenVR Data from SteamVR Applications</div>
+        <div class="pub-authors">
+          Martinez, E. S., Malik, A. A., & McMahan, R. P.
+        </div>
+        <a href="https://ieeexplore.ieee.org/document/10536207" target="_blank" class="pub-link">
+          view paper →
+        </a>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards">
+      <h2 class="section-title">awards & honors</h2>
+
+      <div class="award">
+        <div class="award-icon">🏆</div>
+        <div class="award-content">
+          <h3>Distinguished Undergraduate Researcher Award</h3>
+          <div class="award-date">December 2025 • University of Central Florida</div>
+          <div class="award-desc">Recognized for outstanding undergraduate research contributions</div>
+        </div>
+      </div>
+
+      <div class="award">
+        <div class="award-icon">🥇</div>
+        <div class="award-content">
+          <h3>First Place Computer Science Senior Design Project</h3>
+          <div class="award-date">November 2025 • UCF Senior Design Showcase</div>
+          <div class="award-desc">AI Firewall to Prevent Human Trafficking</div>
+        </div>
+      </div>
+
+      <div class="award">
+        <div class="award-icon">🎯</div>
+        <div class="award-content">
+          <h3>First Place Poster Presentation</h3>
+          <div class="award-date">July 2024 • Texas State University REU Showcase</div>
+          <div class="award-desc">Virtual Reality Tool for Individuals with Autism</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Projects -->
+    <section id="projects">
+      <h2 class="section-title">personal projects</h2>
+
+      <div class="grid">
+        <div class="project-card">
+          <div class="project-icon">🤖</div>
+          <h3>Arduino Iron Man Helmet</h3>
+          <p>
+            Fully functional Iron Man helmet replica built from scratch with 3D printed exterior hull. 
+            Features Arduino Nano, servo driver, 10 motors, LED eyes, and rechargeable power supply. 
+            Over 150 hours of coding, wiring, and assembly.
+          </p>
+          <a href="https://youtu.be/KnIzCPokLtY" target="_blank">watch demo →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">🎨</div>
+          <h3>Paintings</h3>
+          <p>
+            A lifelong passion for visual art. I aspire to one day host an art exhibition and donate 
+            all proceeds to primary education institutions in Pakistan, supporting access to quality 
+            education for underprivileged children.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">🪚</div>
+          <h3>Woodworking & Home Improvement</h3>
+          <p>
+            Hands-on projects involving furniture building, home renovations, and custom woodwork. 
+            Combining technical precision with creative design.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">🧵</div>
+          <h3>Sewing Projects</h3>
+          <p>
+            Custom clothing and textile projects, from design to execution. Exploring the intersection 
+            of functionality and aesthetic appeal through fabric arts.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-title">experience</h2>
+
+      <div class="card">
+        <div class="card-title">Secretary – Project Downtown Orlando</div>
+        <div class="card-meta">Nov 2023 – Present</div>
+        <div class="card-content">
+          <p>Local non-profit providing over 800 meals & 1000 hygiene kits monthly to individuals in need.</p>
+          <ul>
+            <li>Oversee backend operations including logistics planning and execution</li>
+            <li>Develop and manage annual budget of $35,000</li>
+            <li>Manage all legal compliance and filings</li>
+            <li>Represent organization with sponsors and third-party service providers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Graduate Student Services Assistant</div>
+        <div class="card-meta">University of Central Florida | Sept 2024 – Present</div>
+        <div class="card-content">
+          <ul>
+            <li>Support CS PhD and Master's students with program requirements and policies</li>
+            <li>Assist with hiring process for graders, GTAs, postdocs, and professors</li>
+            <li>Facilitate graduate student open houses and campus tours</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Teaching Assistant – Microsoft TEALS</div>
+        <div class="card-meta">Aug 2023 – May 2024</div>
+        <div class="card-content">
+          <p>Program building sustainable computer science programs in high schools.</p>
+          <ul>
+            <li>Assisted instructor with Python and Java lessons</li>
+            <li>Provided one-on-one guidance to 25 students on programming assignments</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">get in touch</h2>
+      <div class="card">
+        <div class="card-content">
+          <p style="margin-bottom: 1.5rem;">
+            I'm always interested in discussing research opportunities, collaborations, or just chatting 
+            about AI, VR, computational biology, or art!
+          </p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:ayesha@example.com">ayesha@example.com</a><br/>
+            <strong>GitHub:</strong> <a href="https://github.com/ayeshaamalikk" target="_blank">@ayeshaamalikk</a><br/>
+            <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ayesha-malik" target="_blank">linkedin.com/in/ayesha-malik</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    © <span id="year"></span> Your Name
+    <p>&copy; <span id="year"></span> Ayesha A. Malik</p>
   </footer>
 
   <script>
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Carousel functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const dotsContainer = document.getElementById('dots');
+
+    // Create dots
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateCarousel() {
+      const carousel = document.getElementById('carousel');
+      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    function moveSlide(direction) {
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    // Auto-advance carousel every 5 seconds
+    setInterval(() => {
+      moveSlide(1);
+    }, 5000);
   </script>
 </body>
 </html>
