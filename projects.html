@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ayesha A. Malik - Personal Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --text-primary: #2d2d2d;
+      --text-secondary: #4a4a4a;
+      --accent: #b8403a;
+      --border: #e5e5e5;
+    }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 3rem;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    nav li {
+      margin-left: 2.5rem;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 6rem 3rem 4rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Personal Projects */
+    .project-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .project-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 1rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      background: #fafafa;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      nav li {
+        margin-left: 1.5rem;
+      }
+
+      .container {
+        padding: 5rem 2rem 3rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html#about">about</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="projects.html">personal projects</a></li>
+      <li><a href="cv.html">cv</a></li>
+      <li><a href="index.html#contact">contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Personal Projects</h1>
+
+    <div class="grid">
+      <div class="project-card">
+        <div class="project-icon">🤖</div>
+        <h3>Arduino Iron Man Helmet</h3>
+        <p>
+          Fully functional Iron Man helmet replica built from scratch with 3D printed exterior hull. 
+          Features Arduino Nano, servo driver, 10 motors, LED eyes, and rechargeable power supply. 
+          Over 150 hours of coding, wiring, and assembly.
+        </p>
+        <a href="https://youtu.be/KnIzCPokLtY" target="_blank">watch demo →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🎨</div>
+        <h3>Paintings</h3>
+        <p>
+          A lifelong passion for visual art. I aspire to one day host an art exhibition and donate 
+          all proceeds to primary education institutions in Pakistan, supporting access to quality 
+          education for underprivileged children.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🪚</div>
+        <h3>Woodworking & Home Improvement</h3>
+        <p>
+          Hands-on projects involving furniture building, home renovations, and custom woodwork. 
+          Combining technical precision with creative design.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🧵</div>
+        <h3>Sewing Projects</h3>
+        <p>
+          Custom clothing and textile projects, from design to execution. Exploring the intersection 
+          of functionality and aesthetic appeal through fabric arts.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Ayesha A. Malik</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

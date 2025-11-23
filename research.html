@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ayesha A. Malik - Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --text-primary: #2d2d2d;
+      --text-secondary: #4a4a4a;
+      --accent: #b8403a;
+      --border: #e5e5e5;
+    }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 3rem;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    nav li {
+      margin-left: 2.5rem;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 6rem 3rem 4rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      text-transform: lowercase;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-meta {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .card-content {
+      color: var(--text-primary);
+      line-height: 1.8;
+    }
+
+    .card-content ul {
+      margin-left: 1.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .card-content li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: #f5f5f5;
+      color: var(--text-secondary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      border: 1px solid var(--border);
+    }
+
+    /* Publications */
+    .publication {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .publication:last-child {
+      border-bottom: none;
+    }
+
+    .pub-venue {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pub-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .pub-authors {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+
+    .pub-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .pub-link:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* Awards */
+    .award {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .award:last-child {
+      border-bottom: none;
+    }
+
+    .award-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .award-content h3 {
+      color: var(--text-primary);
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .award-date {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      font-style: italic;
+    }
+
+    .award-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #fafafa;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      nav li {
+        margin-left: 1.5rem;
+      }
+
+      .container {
+        padding: 5rem 2rem 3rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html#about">about</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="projects.html">personal projects</a></li>
+      <li><a href="cv.html">cv</a></li>
+      <li><a href="index.html#contact">contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Research</h1>
+
+    <!-- Research Experience -->
+    <section id="research">
+      <h2 class="section-title">research experience</h2>
+
+      <div class="card">
+        <div class="card-title">NSF REU – Multi-Omics Data Integration</div>
+        <div class="card-meta">University of Central Florida | Oct 2024 – Feb 2025</div>
+        <div class="card-content">
+          <p><strong>Award #2246796:</strong> Developing computational methods for integrating multi-dimensional biological data to improve phenome prediction.</p>
+          <ul>
+            <li>Produced survey paper reviewing ML algorithms for analyzing cell composition and gene expression patterns</li>
+            <li>Preprocessed and annotated dataset of 45,000 gene expression samples</li>
+            <li>Set up, trained, and evaluated 8 different cell deconvolution algorithms</li>
+            <li>Performed statistical analysis and fine-tuned parameters to optimize accuracy</li>
+          </ul>
+        </div>
+        <div class="tags">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Bioinformatics</span>
+          <span class="tag">Python</span>
+          <span class="tag">Data Analysis</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">NSF REU – VR for Autism Assessment</div>
+        <div class="card-meta">Texas State University | June 2024 – July 2024</div>
+        <div class="card-content">
+          <p><strong>Award #2150135:</strong> Developed a VR tool in Unity to test motor skills of children with Autism.</p>
+          <ul>
+            <li>Processed resulting data and tested various ML supervised regression models</li>
+            <li>Determined level of motor delay and most influential components of movement</li>
+            <li>🏆 Received first place in REU program poster presentation competition</li>
+            <li>Published paper as first author in IEEE UEMCON 2024</li>
+          </ul>
+        </div>
+        <div class="tags">
+          <span class="tag">Unity</span>
+          <span class="tag">Virtual Reality</span>
+          <span class="tag">C#</span>
+          <span class="tag">Machine Learning</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">NSF REU – Multimodal VR Data Logging</div>
+        <div class="card-meta">University of Central Florida | Jan 2024 – May 2024</div>
+        <div class="card-content">
+          <p><strong>Award #2232448:</strong> Creating a tool to log multimodal data in VR for ML applications.</p>
+          <ul>
+            <li>Developed WebSocket application to live display data on web browser for remote streaming</li>
+            <li>Created all documentation for the project codebase</li>
+            <li>Conducted participants through VR study and managed resulting data</li>
+            <li>Contributed to publication as second author (IEEE VR 2024)</li>
+          </ul>
+        </div>
+        <div class="tags">
+          <span class="tag">Virtual Reality</span>
+          <span class="tag">WebSocket</span>
+          <span class="tag">Unity</span>
+          <span class="tag">Web Development</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Honors Undergraduate Thesis</div>
+        <div class="card-meta">University of Central Florida | Aug 2023 – May 2024</div>
+        <div class="card-content">
+          <p>
+            Developed, proposed, and defended thesis exploring the effects of Humanoid Visual Alterations 
+            on Task Performance and User Perceptions During Human-Robot Interaction in Virtual Reality.
+          </p>
+        </div>
+        <div class="tags">
+          <span class="tag">HRI</span>
+          <span class="tag">Virtual Reality</span>
+          <span class="tag">User Studies</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2 class="section-title">publications</h2>
+
+      <div class="publication">
+        <div class="pub-venue">Genome Biology 2025</div>
+        <div class="pub-title">MOADE: high-resolution digital dissociation with deep multimodal autoencoder</div>
+        <div class="pub-authors">
+          Sun, J.*, Malik, A.*, Lin, T. et al. (* co-first author)
+        </div>
+        <a href="https://doi.org/10.1186/s13059-025-03805-1" target="_blank" class="pub-link">
+          view paper →
+        </a>
+      </div>
+
+      <div class="publication">
+        <div class="pub-venue">ICIBM 2025</div>
+        <div class="pub-title">Benchmarking cellular deconvolution algorithms to predict cell proportions: A literature review</div>
+        <div class="pub-authors">
+          Bratton, A., Malik, A. A., Sun, J., Li, Q., & Zhang, W.
+        </div>
+        <a href="#" target="_blank" class="pub-link">
+          preprint link →
+        </a>
+      </div>
+
+      <div class="publication">
+        <div class="pub-venue">IEEE UEMCON 2024</div>
+        <div class="pub-title">Virtual Reality on Assessing the Motor Skills of Individuals with Autism Spectrum Disorder</div>
+        <div class="pub-authors">
+          Malik, A. A., Zaki, A. M., Tran, N. C., Liang, I. X., Liu, T., & Valles, D.
+        </div>
+        <a href="https://ieeexplore.ieee.org/document/10754723" target="_blank" class="pub-link">
+          view paper →
+        </a>
+      </div>
+
+      <div class="publication">
+        <div class="pub-venue">IEEE VR 2024</div>
+        <div class="pub-title">CLOVR: Collecting and Logging OpenVR Data from SteamVR Applications</div>
+        <div class="pub-authors">
+          Martinez, E. S., Malik, A. A., & McMahan, R. P.
+        </div>
+        <a href="https://ieeexplore.ieee.org/document/10536207" target="_blank" class="pub-link">
+          view paper →
+        </a>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards">
+      <h2 class="section-title">awards & honors</h2>
+
+      <div class="award">
+        <div class="award-icon">🏆</div>
+        <div class="award-content">
+          <h3>Distinguished Undergraduate Researcher Award</h3>
+          <div class="award-date">December 2025 • University of Central Florida</div>
+          <div class="award-desc">Recognized for outstanding undergraduate research contributions</div>
+        </div>
+      </div>
+
+      <div class="award">
+        <div class="award-icon">🥇</div>
+        <div class="award-content">
+          <h3>First Place Computer Science Senior Design Project</h3>
+          <div class="award-date">November 2025 • UCF Senior Design Showcase</div>
+          <div class="award-desc">AI Firewall to Prevent Human Trafficking</div>
+        </div>
+      </div>
+
+      <div class="award">
+        <div class="award-icon">🎯</div>
+        <div class="award-content">
+          <h3>First Place Poster Presentation</h3>
+          <div class="award-date">July 2024 • Texas State University REU Showcase</div>
+          <div class="award-desc">Virtual Reality Tool for Individuals with Autism</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Ayesha A. Malik</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

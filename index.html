@@ -19,7 +19,7 @@
       --bg: #ffffff;
       --text-primary: #2d2d2d;
       --text-secondary: #4a4a4a;
-      --accent: #b8403a;
+      --accent: #732cbb;
       --border: #e5e5e5;
     }
 
@@ -98,21 +98,20 @@
     }
 
     .hero-content p {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       color: var(--text-primary);
       line-height: 1.8;
       font-size: 1rem;
     }
 
     .hero-content a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
+      color: #1a73e8;
+      text-decoration: underline;
+      transition: color 0.3s ease;
     }
 
     .hero-content a:hover {
-      border-bottom-color: var(--accent);
+      color: #0d47a1;
     }
 
     .hero-content .tagline {
@@ -136,7 +135,7 @@
       height: auto;
       aspect-ratio: 1;
       border-radius: 50%;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
       object-fit: cover;
     }
@@ -145,35 +144,48 @@
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
 
-    .social-icons a {
-      color: var(--accent);
-      font-size: 1.8rem;
-      transition: transform 0.3s ease;
+    .social-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--text-secondary);
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
-    .social-icons a:hover {
+    .social-icon:hover {
+      color: var(--accent);
       transform: translateY(-3px);
+    }
+
+    .social-icon .icon {
+      font-size: 1.5rem;
+    }
+
+    .social-icon .label {
+      font-size: 0.75rem;
+      text-align: center;
     }
 
     /* Container */
     .container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 2rem 3rem 4rem;
     }
 
     section {
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
 
     .section-title {
       font-size: 2rem;
       font-weight: 600;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
       color: var(--text-primary);
       text-transform: lowercase;
     }
@@ -182,7 +194,7 @@
     .carousel-container {
       position: relative;
       max-width: 900px;
-      margin: 3rem auto;
+      margin: 1.5rem auto;
       overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -313,51 +325,99 @@
       margin-bottom: 0.6rem;
     }
 
-    /* Publications */
-    .publication {
-      padding: 1.5rem 0;
+    /* Selected Work */
+    .work-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 1.5rem;
     }
 
-    .publication:last-child {
+    .work-item:last-child {
       border-bottom: none;
     }
 
-    .pub-venue {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    .work-thumbnail {
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      background: #f5f5f5;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
     }
 
-    .pub-title {
-      font-size: 1.2rem;
+    .work-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .work-content {
+      flex: 1;
+    }
+
+    .work-venue {
+      display: inline-block;
+      background: #4b2390;
+      color: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.6rem;
+    }
+
+    .work-title {
+      font-size: 1.15rem;
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 0.5rem;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
-    .pub-authors {
+    .work-authors {
       color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
       font-style: italic;
     }
 
-    .pub-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.95rem;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
+    .work-publication {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
     }
 
-    .pub-link:hover {
-      border-bottom-color: var(--accent);
+    .work-buttons {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .work-btn {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      background: white;
+      transition: all 0.3s ease;
+    }
+
+    .work-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .work-btn.honorable {
+      background: #fff4e6;
+      border-color: #ffb020;
+      color: #b87d00;
     }
 
     /* Awards */
@@ -481,9 +541,16 @@
     }
 
     /* Responsive */
-    @media (max-width: 968px) {
+    @media (max-width: 1024px) {
       .hero {
-        grid-template-columns: 1fr 200px;
+        grid-template-columns: 1fr 280px;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr 220px;
         gap: 2rem;
         padding: 6rem 2rem 3rem;
       }
@@ -493,39 +560,40 @@
       }
 
       .profile-image {
-        max-width: 200px;
+        max-width: 220px;
       }
     }
 
     @media (max-width: 640px) {
       .hero {
-        grid-template-columns: 1fr 150px;
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
         padding: 5rem 1.5rem 2rem;
       }
 
       .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
-      .hero-content .position {
-        font-size: 0.9rem;
-      }
-
-      .hero-content p {
-        font-size: 0.95rem;
+      .profile-section {
+        position: relative;
+        top: 0;
+        max-width: 240px;
+        margin: 0 auto;
       }
 
       .profile-image {
-        max-width: 150px;
+        width: 100%;
+        height: auto;
       }
 
-      .social-icons {
-        gap: 1rem;
+      .work-item {
+        flex-direction: column;
       }
 
-      .social-icons a {
-        font-size: 1.5rem;
+      .work-thumbnail {
+        width: 100%;
+        height: 150px;
       }
     }
 
@@ -548,7 +616,7 @@
       .carousel-slide img {
         height: 350px;
       }
-    }
+    
 
     /* Smooth scroll */
     html {
@@ -560,12 +628,11 @@
   <!-- Navigation -->
   <nav>
     <ul>
-      <li><a href="#about">about</a></li>
-      <li><a href="#research">research</a></li>
-      <li><a href="#publications">publications</a></li>
-      <li><a href="#awards">awards</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#contact">contact</a></li>
+      <li><a href="index.html#about">about</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="projects.html">personal projects</a></li>
+      <li><a href="cv.html">cv</a></li>
+      <li><a href="index.html#contact">contact</a></li>
     </ul>
   </nav>
 
@@ -575,40 +642,40 @@
       <h1>Ayesha A. Malik</h1>
       <p class="position">
         Undergraduate Researcher | University of Central Florida<br>
-        <span class="degree">B.S. in Computer Science (Graduating December 2025)</span>
+        <span class="degree">B.S. in Computer Science (Graduating Dec 2025)</span>
       </p>
 
       <p>
-        Hi there! I'm a senior Computer Science student at the University of Central Florida. I've been in undergraduate research for the past 3 years, 
-        and won my institution's  <a href="#" target="pdorlando.org">Distinguished Undergraduate Researcher Award</a>. Check out my work below!
+        Hi there! I'm a senior Computer Science student at the University of Central Florida. I have three years of undergraduate research experience in human-computer interaction and bioinformatics, 
+        and recently won my institution's <strong>Distinguished Undergraduate Researcher Award</strong>.
       </p>
 
       <p>
-        
-      </p>
-
-      <p>
-        
-      </p>
-
-      <p>
-        Beyond research, I enjoy painting, woodworking, sewing, and building electronics. I'm also the Secretary 
-        of <a href="https://pdorlando.org/" target="_blank">Project Downtown Orlando</a>, a local non-profit reaching over 800 
+        Beyond research, I enjoy <strong>painting, woodworking, sewing</strong>, and <strong>building electronics</strong>. I'm also the Secretary
+        of <a href="https://pdorlando.org/" target="_blank"><strong>Project Downtown Orlando</strong></a>, a local non-profit reaching over 800 
         individuals in need every month.
-      </p>
-
-      <p class="tagline">
-
       </p>
     </div>
 
     <div class="profile-section">
       <img src="IMG_8158.jpg" alt="Ayesha A. Malik" class="profile-image">
       <div class="social-icons">
-        <a href="mailto:ayesha@example.com" title="Email">✉️</a>
-        <a href="https://scholar.google.com/citations?user=_hS7AdAAAAAJ&hl=en" target="_blank" title="Google Scholar">🎓</a>
-        <a href="https://github.com/ayeshaamalikk" target="_blank" title="GitHub">🔗</a>
-        <a href="https://linkedin.com/in/ayesha-malik" target="_blank" title="LinkedIn">💼</a>
+        <a href="https://scholar.google.com/citations?user=_hS7AdAAAAAJ&hl=en" target="_blank" class="social-icon">
+          <span class="icon">🎓</span>
+          <span class="label">Google Scholar</span>
+        </a>
+        <a href="https://github.com/ayeshaamalikk" target="_blank" class="social-icon">
+          <span class="icon">🔗</span>
+          <span class="label">GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/ayeshaamalik" target="_blank" class="social-icon">
+          <span class="icon">💼</span>
+          <span class="label">LinkedIn</span>
+        </a>
+      </div>
+      <div style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-secondary);">
+        <div><strong>Personal Email:</strong> <a href="mailto:ayeshamalik6312@gmail.com" style="color: var(--text-secondary); text-decoration: none;">ayeshamalik6312@gmail.com</a></div>
+        <div style="margin-top: 0.3rem;"><strong>Institutional Email:</strong> <a href="mailto:ayesha.malik@ucf.edu" style="color: var(--text-secondary); text-decoration: none;">ayesha.malik@ucf.edu</a></div>
       </div>
     </div>
   </section>
@@ -646,253 +713,74 @@
       <div class="carousel-dots" id="dots"></div>
     </section>
 
-    <!-- Research Experience -->
-    <section id="research">
-      <h2 class="section-title">research experience</h2>
+    <!-- Selected Work -->
+    <section id="selected-work">
+      <h2 class="section-title">selected work</h2>
 
-      <div class="card">
-        <div class="card-title">NSF REU – Multi-Omics Data Integration</div>
-        <div class="card-meta">University of Central Florida | Oct 2024 – Feb 2025</div>
-        <div class="card-content">
-          <p><strong>Award #2246796:</strong> Developing computational methods for integrating multi-dimensional biological data to improve phenome prediction.</p>
-          <ul>
-            <li>Produced survey paper reviewing ML algorithms for analyzing cell composition and gene expression patterns</li>
-            <li>Preprocessed and annotated dataset of 45,000 gene expression samples</li>
-            <li>Set up, trained, and evaluated 8 different cell deconvolution algorithms</li>
-            <li>Performed statistical analysis and fine-tuned parameters to optimize accuracy</li>
-          </ul>
+      <div class="work-item">
+        <div class="work-thumbnail">
+          <img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs13059-025-03805-1/MediaObjects/13059_2025_3805_Fig1_HTML.png" alt="MOADE">
         </div>
-        <div class="tags">
-          <span class="tag">Machine Learning</span>
-          <span class="tag">Bioinformatics</span>
-          <span class="tag">Python</span>
-          <span class="tag">Data Analysis</span>
+        <div class="work-content">
+          <div class="work-venue">Genome Biology</div>
+          <div class="work-title">MOADE: high-resolution digital dissociation with deep multimodal autoencoder</div>
+          <div class="work-authors">Sun, J.*, <strong style="text-decoration: underline;">Malik, A.*</strong>, Lin, T. et al. <span style="font-weight: 600; color: var(--accent);">(* co-first author)</span></div>
+          <div class="work-publication">Genome Biology 26, 325 (2025)</div>
+          <div class="work-buttons">
+            <a href="https://doi.org/10.1186/s13059-025-03805-1" target="_blank" class="work-btn">VIEW PAPER</a>
+            <a href="#" class="work-btn">BIB</a>
+            <a href="#" class="work-btn">PDF</a>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">NSF REU – VR for Autism Assessment</div>
-        <div class="card-meta">Texas State University | June 2024 – July 2024</div>
-        <div class="card-content">
-          <p><strong>Award #2150135:</strong> Developed a VR tool in Unity to test motor skills of children with Autism.</p>
-          <ul>
-            <li>Processed resulting data and tested various ML supervised regression models</li>
-            <li>Determined level of motor delay and most influential components of movement</li>
-            <li>🏆 Received first place in REU program poster presentation competition</li>
-            <li>Published paper as first author in IEEE UEMCON 2024</li>
-          </ul>
+      <div class="work-item">
+        <div class="work-thumbnail">
+          <!-- Add thumbnail image here later -->
         </div>
-        <div class="tags">
-          <span class="tag">Unity</span>
-          <span class="tag">Virtual Reality</span>
-          <span class="tag">C#</span>
-          <span class="tag">Machine Learning</span>
+        <div class="work-content">
+          <div class="work-venue">IEEE UEMCON</div>
+          <div class="work-title">Virtual Reality on Assessing the Motor Skills of Individuals with Autism Spectrum Disorder</div>
+          <div class="work-authors"><strong style="text-decoration: underline;">Malik, A. A.</strong>, Zaki, A. M., Tran, N. C., Liang, I. X., Liu, T., & Valles, D.</div>
+          <div class="work-publication">2024 IEEE 15th Annual Ubiquitous Computing, Electronics & Mobile Communication Conference (UEMCON), 2024, pp. 548-555</div>
+          <div class="work-buttons">
+            <a href="https://ieeexplore.ieee.org/document/10754723" target="_blank" class="work-btn">VIEW PAPER</a>
+            <a href="#" class="work-btn">BIB</a>
+            <a href="#" class="work-btn">PDF</a>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">NSF REU – Multimodal VR Data Logging</div>
-        <div class="card-meta">University of Central Florida | Jan 2024 – May 2024</div>
-        <div class="card-content">
-          <p><strong>Award #2232448:</strong> Creating a tool to log multimodal data in VR for ML applications.</p>
-          <ul>
-            <li>Developed WebSocket application to live display data on web browser for remote streaming</li>
-            <li>Created all documentation for the project codebase</li>
-            <li>Conducted participants through VR study and managed resulting data</li>
-            <li>Contributed to publication as second author (IEEE VR 2024)</li>
-          </ul>
+      <div class="work-item">
+        <div class="work-thumbnail">
+          <!-- Add thumbnail image here later -->
         </div>
-        <div class="tags">
-          <span class="tag">Virtual Reality</span>
-          <span class="tag">WebSocket</span>
-          <span class="tag">Unity</span>
-          <span class="tag">Web Development</span>
+        <div class="work-content">
+          <div class="work-venue">IEEE VR</div>
+          <div class="work-title">CLOVR: Collecting and Logging OpenVR Data from SteamVR Applications</div>
+          <div class="work-authors">Martinez, E. S., <strong style="text-decoration: underline;">Malik, A. A.</strong>, & McMahan, R. P.</div>
+          <div class="work-publication">2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Orlando, FL, USA, 2024, pp. 485-492</div>
+          <div class="work-buttons">
+            <a href="https://ieeexplore.ieee.org/document/10536207" target="_blank" class="work-btn">VIEW PAPER</a>
+            <a href="#" class="work-btn">BIB</a>
+            <a href="#" class="work-btn">PDF</a>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">Honors Undergraduate Thesis</div>
-        <div class="card-meta">University of Central Florida | Aug 2023 – May 2024</div>
-        <div class="card-content">
-          <p>
-            Developed, proposed, and defended thesis exploring the effects of Humanoid Visual Alterations 
-            on Task Performance and User Perceptions During Human-Robot Interaction in Virtual Reality.
-          </p>
+      <div class="work-item">
+        <div class="work-thumbnail">
+          <!-- Add thumbnail image here later -->
         </div>
-        <div class="tags">
-          <span class="tag">HRI</span>
-          <span class="tag">Virtual Reality</span>
-          <span class="tag">User Studies</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Publications -->
-    <section id="publications">
-      <h2 class="section-title">Publications</h2>
-
-      <div class="publication">
-        <div class="pub-venue">Genome Biology 2025</div>
-        <div class="pub-title">MOADE: high-resolution digital dissociation with deep multimodal autoencoder</div>
-        <div class="pub-authors">
-          Sun, J.*, Malik, A.*, Lin, T. et al. (* co-first author)
-        </div>
-        <a href="https://doi.org/10.1186/s13059-025-03805-1" target="_blank" class="pub-link">
-          view paper →
-        </a>
-      </div>
-
-      <div class="publication">
-        <div class="pub-venue">ICIBM 2025</div>
-        <div class="pub-title">Benchmarking cellular deconvolution algorithms to predict cell proportions: A literature review</div>
-        <div class="pub-authors">
-          Bratton, A., Malik, A. A., Sun, J., Li, Q., & Zhang, W.
-        </div>
-        <a href="#" target="_blank" class="pub-link">
-          preprint link →
-        </a>
-      </div>
-
-      <div class="publication">
-        <div class="pub-venue">IEEE UEMCON 2024</div>
-        <div class="pub-title">Virtual Reality on Assessing the Motor Skills of Individuals with Autism Spectrum Disorder</div>
-        <div class="pub-authors">
-          Malik, A. A., Zaki, A. M., Tran, N. C., Liang, I. X., Liu, T., & Valles, D.
-        </div>
-        <a href="https://ieeexplore.ieee.org/document/10754723" target="_blank" class="pub-link">
-          view paper →
-        </a>
-      </div>
-
-      <div class="publication">
-        <div class="pub-venue">IEEE VR 2024</div>
-        <div class="pub-title">CLOVR: Collecting and Logging OpenVR Data from SteamVR Applications</div>
-        <div class="pub-authors">
-          Martinez, E. S., Malik, A. A., & McMahan, R. P.
-        </div>
-        <a href="https://ieeexplore.ieee.org/document/10536207" target="_blank" class="pub-link">
-          view paper →
-        </a>
-      </div>
-    </section>
-
-    <!-- Awards -->
-    <section id="awards">
-      <h2 class="section-title">awards & honors</h2>
-
-      <div class="award">
-        <div class="award-icon">🏆</div>
-        <div class="award-content">
-          <h3>Distinguished Undergraduate Researcher Award</h3>
-          <div class="award-date">December 2025 • University of Central Florida</div>
-          <div class="award-desc">Recognized for outstanding undergraduate research contributions</div>
-        </div>
-      </div>
-
-      <div class="award">
-        <div class="award-icon">🥇</div>
-        <div class="award-content">
-          <h3>First Place Computer Science Senior Design Project</h3>
-          <div class="award-date">November 2025 • UCF Senior Design Showcase</div>
-          <div class="award-desc">AI Firewall to Prevent Human Trafficking</div>
-        </div>
-      </div>
-
-      <div class="award">
-        <div class="award-icon">🎯</div>
-        <div class="award-content">
-          <h3>First Place Poster Presentation</h3>
-          <div class="award-date">July 2024 • Texas State University REU Showcase</div>
-          <div class="award-desc">Virtual Reality Tool for Individuals with Autism</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Personal Projects -->
-    <section id="projects">
-      <h2 class="section-title">personal projects</h2>
-
-      <div class="grid">
-        <div class="project-card">
-          <div class="project-icon">🤖</div>
-          <h3>Arduino Iron Man Helmet</h3>
-          <p>
-            Fully functional Iron Man helmet replica built from scratch with 3D printed exterior hull. 
-            Features Arduino Nano, servo driver, 10 motors, LED eyes, and rechargeable power supply. 
-            Over 150 hours of coding, wiring, and assembly.
-          </p>
-          <a href="https://youtu.be/KnIzCPokLtY" target="_blank">watch demo →</a>
-        </div>
-
-        <div class="project-card">
-          <div class="project-icon">🎨</div>
-          <h3>Paintings</h3>
-          <p>
-            A lifelong passion for visual art. I aspire to one day host an art exhibition and donate 
-            all proceeds to primary education institutions in Pakistan, supporting access to quality 
-            education for underprivileged children.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <div class="project-icon">🪚</div>
-          <h3>Woodworking & Home Improvement</h3>
-          <p>
-            Hands-on projects involving furniture building, home renovations, and custom woodwork. 
-            Combining technical precision with creative design.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <div class="project-icon">🧵</div>
-          <h3>Sewing Projects</h3>
-          <p>
-            Custom clothing and textile projects, from design to execution. Exploring the intersection 
-            of functionality and aesthetic appeal through fabric arts.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience">
-      <h2 class="section-title">experience</h2>
-
-      <div class="card">
-        <div class="card-title">Secretary – Project Downtown Orlando</div>
-        <div class="card-meta">Nov 2023 – Present</div>
-        <div class="card-content">
-          <p>Local non-profit providing over 800 meals & 1000 hygiene kits monthly to individuals in need.</p>
-          <ul>
-            <li>Oversee backend operations including logistics planning and execution</li>
-            <li>Develop and manage annual budget of $35,000</li>
-            <li>Manage all legal compliance and filings</li>
-            <li>Represent organization with sponsors and third-party service providers</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Graduate Student Services Assistant</div>
-        <div class="card-meta">University of Central Florida | Sept 2024 – Present</div>
-        <div class="card-content">
-          <ul>
-            <li>Support CS PhD and Master's students with program requirements and policies</li>
-            <li>Assist with hiring process for graders, GTAs, postdocs, and professors</li>
-            <li>Facilitate graduate student open houses and campus tours</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Teaching Assistant – Microsoft TEALS</div>
-        <div class="card-meta">Aug 2023 – May 2024</div>
-        <div class="card-content">
-          <p>Program building sustainable computer science programs in high schools.</p>
-          <ul>
-            <li>Assisted instructor with Python and Java lessons</li>
-            <li>Provided one-on-one guidance to 25 students on programming assignments</li>
-          </ul>
+        <div class="work-content">
+          <div class="work-venue">ICIBM</div>
+          <div class="work-title">Benchmarking cellular deconvolution algorithms to predict cell proportions: A literature review</div>
+          <div class="work-authors">Bratton, A., <strong style="text-decoration: underline;">Malik, A. A.</strong>, Sun, J., Li, Q., & Zhang, W.</div>
+          <div class="work-publication">Proceedings of the International Conference on Intelligent Biology and Medicine (ICIBM 2025) (Accepted, In Press)</div>
+          <div class="work-buttons">
+            <a href="#" class="work-btn">PREPRINT</a>
+            <a href="#" class="work-btn">BIB</a>
+          </div>
         </div>
       </div>
     </section>
@@ -904,12 +792,13 @@
         <div class="card-content">
           <p style="margin-bottom: 1.5rem;">
             I'm always interested in discussing research opportunities, collaborations, or just chatting 
-            about AI, VR, computational biology, or art!
+            about VR, computational biology, or art!
           </p>
           <p>
-            <strong>Email:</strong> <a href="mailto:ayesha@example.com">ayesha@example.com</a><br/>
+            <strong>Personal Email:</strong> <a href="mailto:ayeshamalik6312@gmail.com">ayeshamalik6312@gmail.com</a><br/>
+            <strong>Institutional Email:</strong> <a href="mailto:ayesha.malik@ucf.edu">ayesha.malik@ucf.edu</a><br/>
             <strong>GitHub:</strong> <a href="https://github.com/ayeshaamalikk" target="_blank">@ayeshaamalikk</a><br/>
-            <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ayesha-malik" target="_blank">linkedin.com/in/ayesha-malik</a>
+            <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ayeshaamalik" target="_blank">linkedin.com/in/ayeshaamalik</a>
           </p>
         </div>
       </div>
