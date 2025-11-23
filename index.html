@@ -68,14 +68,13 @@
 
     /* Hero Section with About */
     .hero {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 8rem 3rem 4rem;
+      padding: 6rem 3rem 3rem;
       display: grid;
-      grid-template-columns: 1fr 400px;
+      grid-template-columns: 1fr 320px;
       gap: 4rem;
       align-items: start;
-      min-height: 100vh;
     }
 
     .hero-content h1 {
@@ -126,13 +125,18 @@
     .profile-section {
       position: sticky;
       top: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .profile-image {
-      width: 280px;
-      height: 280px;
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      aspect-ratio: 1;
       border-radius: 50%;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
       object-fit: cover;
     }
@@ -157,13 +161,13 @@
 
     /* Container */
     .container {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 3rem 5rem;
+      padding: 2rem 3rem 4rem;
     }
 
     section {
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
     }
 
     .section-title {
@@ -479,7 +483,7 @@
     /* Responsive */
     @media (max-width: 968px) {
       .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 200px;
         gap: 2rem;
         padding: 6rem 2rem 3rem;
       }
@@ -488,17 +492,42 @@
         font-size: 2.5rem;
       }
 
-      .profile-section {
-        position: relative;
-        top: 0;
-        max-width: 280px;
-        margin: 0 auto;
+      .profile-image {
+        max-width: 200px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        grid-template-columns: 1fr 150px;
+        gap: 1.5rem;
+        padding: 5rem 1.5rem 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content .position {
+        font-size: 0.9rem;
+      }
+
+      .hero-content p {
+        font-size: 0.95rem;
       }
 
       .profile-image {
-        width: 100%;
-        height: auto;
+        max-width: 150px;
       }
+
+      .social-icons {
+        gap: 1rem;
+      }
+
+      .social-icons a {
+        font-size: 1.5rem;
+      }
+    }
 
       nav {
         padding: 1rem 2rem;
