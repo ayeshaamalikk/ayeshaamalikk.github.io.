@@ -45,9 +45,6 @@
 
     nav .nav-container {
       position: relative;
-    }
-
-    nav .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -97,6 +94,15 @@
       color: var(--text-primary);
       cursor: pointer;
       padding: 0.5rem;
+      z-index: 1001;
+      position: absolute;
+      right: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .menu-toggle:hover {
+      color: var(--accent);
     }
 
     /* Mobile Dropdown */
@@ -107,6 +113,10 @@
 
       .menu-toggle {
         display: block;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
       nav .nav-container {
@@ -426,10 +436,13 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        position: relative;
       }
 
       nav .nav-brand {
         align-self: flex-start;
+        position: relative;
+        z-index: 1;
       }
 
       .container {
@@ -468,7 +481,7 @@
   <nav>
     <div class="nav-container">
       <a href="index.html#about" class="nav-brand">Ayesha A. Malik</a>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
       <ul id="nav-menu">
         <li><a href="index.html#about">about</a></li>
         <li><a href="research.html">research</a></li>
@@ -525,15 +538,24 @@
       menu.classList.toggle('active');
     }
 
-    // Close menu when clicking outside
+    // Close menu when clicking outside or on a link
     document.addEventListener('click', function(event) {
       const nav = document.querySelector('nav');
       const menu = document.getElementById('nav-menu');
       
       if (window.innerWidth <= 768 && menu.classList.contains('active')) {
-        if (!nav.contains(event.target)) {
+        // Close if clicking outside nav or on a menu link
+        if (!nav.contains(event.target) || event.target.closest('nav a')) {
           menu.classList.remove('active');
         }
+      }
+    });
+
+    // Close menu when window is resized to desktop size
+    window.addEventListener('resize', function() {
+      const menu = document.getElementById('nav-menu');
+      if (window.innerWidth > 768) {
+        menu.classList.remove('active');
       }
     });
   </script>
