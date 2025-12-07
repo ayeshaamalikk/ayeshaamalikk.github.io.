@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Ayesha A. Malik - CV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦔</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path fill=%22%2358a957%22 d=%22M50 20 Q40 30 45 50 T50 80 Q60 50 55 30 T50 20 Z%22/><path fill=%22%234a7c59%22 d=%22M50 25 Q43 32 46 48 T50 75 Q57 50 54 32 T50 25 Z%22/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
       --bg: #ffffff;
       --text-primary: #2d2d2d;
       --text-secondary: #4a4a4a;
-      --accent: #b8403a;
+      --accent: #732cbb;
       --border: #e5e5e5;
     }
 
@@ -43,12 +43,34 @@
       padding: 1.5rem 3rem;
     }
 
+    nav .nav-container {
+      position: relative;
+    }
+
+    nav .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    nav .nav-brand {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav .nav-brand:hover {
+      color: var(--accent);
+    }
+
     nav ul {
       display: flex;
       justify-content: flex-end;
       list-style: none;
-      max-width: 1400px;
-      margin: 0 auto;
     }
 
     nav li {
@@ -66,6 +88,67 @@
       color: var(--accent);
     }
 
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Mobile Dropdown */
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav .nav-container {
+        flex-wrap: wrap;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1.5rem);
+        left: -3rem;
+        right: -3rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 1rem 0;
+        border-top: 1px solid var(--border);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 0;
+        max-width: none;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav li {
+        margin: 0;
+        padding: 0.8rem 3rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav li:last-child {
+        border-bottom: none;
+      }
+
+      nav a {
+        display: block;
+        width: 100%;
+      }
+    }
+
     /* Container */
     .container {
       max-width: 1200px;
@@ -74,10 +157,11 @@
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 600;
       margin-bottom: 1rem;
       color: var(--text-primary);
+      text-transform: lowercase;
     }
 
     .cv-actions {
@@ -248,8 +332,18 @@
         padding: 1rem 2rem;
       }
 
-      nav li {
-        margin-left: 1.5rem;
+      nav {
+        position: relative;
+      }
+
+      nav .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav .nav-brand {
+        align-self: flex-start;
       }
 
       .container {
@@ -257,7 +351,7 @@
       }
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
       }
 
       .pdf-viewer, .pdf-placeholder {
@@ -286,13 +380,16 @@
 <body>
   <!-- Navigation -->
   <nav>
-    <ul>
-      <li><a href="index.html#about">about</a></li>
-      <li><a href="research.html">research</a></li>
-      <li><a href="projects.html">personal projects</a></li>
-      <li><a href="cv.html">cv</a></li>
-      <li><a href="index.html#contact">contact</a></li>
-    </ul>
+    <div class="nav-container">
+      <a href="index.html#about" class="nav-brand">Ayesha A. Malik</a>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="nav-menu">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="research.html">research</a></li>
+        <li><a href="projects.html">personal projects</a></li>
+        <li><a href="cv.html">cv</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Main Content -->
@@ -301,7 +398,6 @@
     
     <div class="cv-actions">
       <a href="Ayesha-Malik-CV.docx.pdf" download class="btn btn-primary">Download CV</a>
-      <a href="index.html" class="btn btn-secondary">Back to Home</a>
     </div>
 
     <!-- PDF Viewer -->
@@ -321,10 +417,6 @@
             <span class="icon"><svg width="24" height="24" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128S57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6c0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></span>
             <span class="label">ORCID</span>
           </a>
-          <a href="https://github.com/ayeshaamalikk" target="_blank" class="social-icon">
-            <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></span>
-            <span class="label">GitHub</span>
-          </a>
           <a href="https://linkedin.com/in/ayeshaamalik" target="_blank" class="social-icon">
             <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0077b5"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></span>
             <span class="label">LinkedIn</span>
@@ -342,6 +434,24 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('active');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const nav = document.querySelector('nav');
+      const menu = document.getElementById('nav-menu');
+      
+      if (window.innerWidth <= 768 && menu.classList.contains('active')) {
+        if (!nav.contains(event.target)) {
+          menu.classList.remove('active');
+        }
+      }
+    });
   </script>
 </body>
 </html>
