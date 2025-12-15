@@ -169,23 +169,6 @@
       padding: 6rem 3rem 4rem;
     }
 
-    /* Under Construction */
-    .under-construction {
-      text-align: center;
-      padding: 4rem 2rem;
-      color: var(--text-secondary);
-    }
-
-    .under-construction-icon {
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .under-construction-text {
-      font-size: 1.2rem;
-      color: var(--text-primary);
-    }
-
     section {
       margin-bottom: 3rem;
     }
@@ -425,6 +408,188 @@
       color: var(--accent);
     }
 
+    /* Research Background */
+    .research-intro {
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+
+    .research-intro p {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .research-intro strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .research-intro a:hover {
+      border-bottom-color: var(--accent) !important;
+    }
+
+    /* Research Projects Layout */
+    .research-project {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .research-project:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .project-thumbnail {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+      background: #f5f5f5;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .project-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .project-header {
+      margin-bottom: 0.8rem;
+    }
+
+    .project-position {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+
+    .project-advisor {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-advisor a:hover {
+      border-bottom-color: var(--accent) !important;
+    }
+
+    .project-description {
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .project-description p {
+      margin-bottom: 0.8rem;
+    }
+
+    .project-description ul {
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-description li {
+      margin-bottom: 0.4rem;
+    }
+
+    .project-publications {
+      margin-top: 1rem;
+    }
+
+    .project-pub-label {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-pub-item {
+      margin-bottom: 0.8rem;
+      padding-left: 0.5rem;
+    }
+
+    .project-pub-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .pub-venue-inline {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pub-title-inline {
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .pub-authors-inline {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-style: italic;
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .pub-note {
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .pub-link-inline {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+      display: inline-block;
+      margin-top: 0.3rem;
+    }
+
+    .pub-link-inline:hover {
+      border-bottom-color: var(--accent);
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       nav {
@@ -461,6 +626,16 @@
         font-size: 1.8rem;
       }
 
+      .research-project {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .project-thumbnail {
+        width: 100%;
+        height: 200px;
+      }
+
       .footer-contact {
         flex-direction: column;
         gap: 1.5rem;
@@ -488,8 +663,7 @@
       <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
       <ul id="nav-menu">
         <li><a href="index.html#about">about</a></li>
-        <li><a href="research.html">research</a></li>
-        <li><a href="projects.html">personal projects</a></li>
+        <li><a href="index.html#publications">publications</a></li>
         <li><a href="cv.html">cv</a></li>
       </ul>
     </div>
@@ -499,10 +673,195 @@
   <div class="container">
     <h1>Research</h1>
 
-    <div class="under-construction">
-      <div class="under-construction-icon">🌱</div>
-      <div class="under-construction-text">Page under construction. Will finish before PhD applications are due!</div>
-    </div>
+    <!-- Research Background -->
+    <section class="research-intro">
+      <p>
+      </p>
+      
+      <p>
+        From <strong>January 2023 to August 2024</strong>, I conducted HCI research at the <strong>eXtended Reality and Training Lab at UCF</strong> under the guidance of <strong><a href="https://website.cs.vt.edu/people/faculty/ryan-p-mcmahan.html" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">Dr. Ryan P McMahan</a></strong>. When Dr. McMahan moved to Virginia Tech in August 2024, I continued working with him remotely through present day (December 2025). We are studiyng cognitive underload in human-robot interaction settings using virtual reality.
+      </p>
+      
+      <p>
+        In <strong>September 2024</strong>, I simultaneously joined the <strong>Computational Biology Lab at UCF</strong>, advised by <strong><a href="https://www.cs.ucf.edu/~wzhang/" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">Dr. Wei Zhang</a></strong>, where I have been working on machine learning approaches for cell deconvolution and multimodal biological data integration. 
+      </p>
+      <p>
+      </p>
+    </section>
+
+    <!-- Research Projects -->
+    <section>
+      <h2 class="section-title">Research Projects</h2>
+      
+      <!-- MOADE Project -->
+      <div class="research-project">
+        <div class="project-thumbnail">
+          <img src="moade.png" alt="MOADE">
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-position">Collaboration with St. Jude Children's Research Hospital</div>
+            <div class="project-title">MOADE: High-Resolution Digital Dissociation</div>
+            <div class="project-advisor">Advised by <a href="https://www.stjude.org/people/l/qian-li.html" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.3s ease;">Dr. Qian Li</a> | Jan 2025 - July 2025</div>
+          </div>
+          
+          <div class="project-description">
+            <p>Developed a deep multimodal autoencoder for high-resolution digital dissociation of tissue samples. This collaboration with St. Jude researchers focused on integrating multi-dimensional biological data to improve phenome prediction and understand cell composition patterns in medulloblastoma samples.</p>
+          </div>
+          
+          <div class="project-publications">
+            <div class="project-pub-label">Publications & Presentations:</div>
+            <div class="project-pub-item">
+              <span class="pub-venue-inline">Genome Biology 2025</span>
+              <span class="pub-title-inline">MOADE: high-resolution digital dissociation with deep multimodal autoencoder</span>
+              <span class="pub-authors-inline">Jiao Sun*, <strong>Ayesha A. Malik*</strong>, Tong Lin, Ayla Bratton, et al. (* co-first authors)</span>
+              <a href="https://doi.org/10.1186/s13059-025-03805-1" target="_blank" class="pub-link-inline">View Paper →</a>
+            </div>
+            <div class="project-pub-item">
+              <span class="pub-venue-inline">ICIBM 2025</span>
+              <span class="pub-title-inline">MOADE Flash Talk: Future Scientists in AI Session</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benchmarking Cell Deconvolution -->
+      <div class="research-project">
+        <div class="project-thumbnail">
+          <img src="benchmark.png" alt="Benchmarking Cell Deconvolution">
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-position">NSF REU | University of Central Florida</div>
+            <div class="project-title">Benchmarking Cell Deconvolution Algorithms</div>
+            <div class="project-advisor">Advised by <a href="https://www.cs.ucf.edu/~wzhang/" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.3s ease;">Dr. Wei Zhang</a> | Summer 2024</div>
+          </div>
+          
+          <div class="project-description">
+            <p>Conducted comprehensive benchmarking of ML-based cell deconvolution methods for single-cell RNA sequencing analysis. Award #2246796 focused on developing computational methods for integrating multi-dimensional biological data.</p>
+            <ul>
+              <li>Preprocessed and annotated dataset of 45,000 gene expression samples</li>
+              <li>Implemented and evaluated 8 different cell deconvolution algorithms (TAPE, DISSECT, CIBERSORTx, SCADEN, ScpDeconv, BayesPrism)</li>
+              <li>Performed statistical analysis comparing predictions with ground truth</li>
+              <li>Fine-tuned parameters to optimize accuracy across all algorithms</li>
+            </ul>
+          </div>
+          
+          <div class="project-publications">
+            <div class="project-pub-label">Publications:</div>
+            <div class="project-pub-item">
+              <span class="pub-venue-inline">ICIBM 2025</span>
+              <span class="pub-title-inline">Benchmarking cellular deconvolution algorithms to predict cell proportions: A literature review</span>
+              <span class="pub-authors-inline">Ayla Bratton, <strong>Ayesha A. Malik</strong>, Jiao Sun, Qian Li, Wei Zhang</span>
+              <span class="pub-note">(Accepted, In Press)</span>
+              <a href="https://drive.google.com/file/d/12E2OsdrpI_ctoGoBa1kT9b_zvrfrzlf1/view" target="_blank" class="pub-link-inline">View Preprint →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VR Autism Tool -->
+      <div class="research-project">
+        <div class="project-thumbnail">
+          <img src="vrautism.png" alt="VR Autism Assessment">
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-position">NSF REU | Texas State University</div>
+            <div class="project-title">VR Motor Assessment for Autism Spectrum Disorder</div>
+            <div class="project-advisor">Advised by <a href="https://www.tamusa.edu/academics/college-of-graduate-studies/deans-message.html" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.3s ease;">Dr. Ting Liu</a> | Summer 2024</div>
+          </div>
+          
+          <div class="project-description">
+            <p>Developed a VR tool in Unity to assess motor skills of children with autism, recreating the MABC-2 motor assessment in virtual reality. Award #2150135.</p>
+            <ul>
+              <li>Built Unity environment and designed experiment protocol</li>
+              <li>Processed resulting data and tested various ML supervised regression models</li>
+              <li>Determined most influential components of movement on motor skill proficiency</li>
+              <li>Pivoted study design when IRB approval was rescinded, proposing alternative validation study using VR-based performance metrics against real-world physics</li>
+            </ul>
+            <p style="margin-top: 0.8rem;"><strong>🏆 First Place</strong> in REU program poster presentation competition</p>
+          </div>
+          
+          <div class="project-publications">
+            <div class="project-pub-label">Publications:</div>
+            <div class="project-pub-item">
+              <span class="pub-venue-inline">IEEE UEMCON 2024</span>
+              <span class="pub-title-inline">Virtual Reality on Assessing the Motor Skills of Individuals with Autism Spectrum Disorder</span>
+              <span class="pub-authors-inline"><strong>Ayesha A. Malik</strong>, Abrar M. Zaki, Ngoc Chung Tran, Irene X. Liang, Ting Liu, Damian Valles</span>
+              <a href="https://ieeexplore.ieee.org/document/10754723" target="_blank" class="pub-link-inline">View Paper →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cognitive Underload in HRI -->
+      <div class="research-project">
+        <div class="project-thumbnail">
+          <img src="vrhri.png" alt="Cognitive Underload in HRI">
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-position">Undergraduate Thesis → Virginia Tech Collaboration</div>
+            <div class="project-title">Cognitive Underload in Human-Robot Interaction</div>
+            <div class="project-advisor">Advised by <a href="https://website.cs.vt.edu/people/faculty/ryan-p-mcmahan.html" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.3s ease;">Dr. Ryan McMahan</a> | Aug 2024 - Present</div>
+          </div>
+          
+          <div class="project-description">
+            <p>Examining how different cue modalities affect attention and cognitive underload during repetitive tasks in VR. This study intentionally manipulates salience and augmentation to test how small changes in environment design can improve focus, teamwork, and engagement in human-robot interaction settings.</p>
+            <ul>
+              <li>Built Unity environment and designed experiment protocol</li>
+              <li>Conducted extensive literature reviews on cognitive load theory</li>
+              <li>Wrote IRB protocol and managed approval process</li>
+              <li>Created Blender animations for robot interactions</li>
+              <li>Trained PhD student to run participants, creating comprehensive documentation</li>
+              <li>Currently writing manuscript for publication</li>
+            </ul>
+          </div>
+          
+          <div class="project-publications">
+            <div class="project-pub-label">Status:</div>
+            <div class="project-pub-item">
+              <span class="pub-title-inline">Study in progress, manuscript in preparation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLOVR -->
+      <div class="research-project">
+        <div class="project-thumbnail">
+          <img src="clovr.png" alt="CLOVR">
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-position">NSF REU | University of Central Florida</div>
+            <div class="project-title">CLOVR: Collecting and Logging OpenVR Data</div>
+            <div class="project-advisor">Advised by <a href="https://website.cs.vt.edu/people/faculty/ryan-p-mcmahan.html" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.3s ease;">Dr. Ryan McMahan</a> | Summer 2023</div>
+          </div>
+          
+          <div class="project-description">
+            <p>Created a tool to log multimodal data in VR for machine learning applications. Award #2232448.</p>
+            <ul>
+              <li>Developed WebSocket application to live display data on web browser, allowing remote participants to stream in real time</li>
+              <li>Created all documentation for the project codebase</li>
+              <li>Conducted participants through VR study and managed resulting data</li>
+              <li>Ran benchmarking experiments to evaluate system performance</li>
+            </ul>
+          </div>
+          
+          <div class="project-publications">
+            <div class="project-pub-label">Publications:</div>
+            <div class="project-pub-item">
+              <span class="pub-venue-inline">IEEE VR 2024</span>
+              <span class="pub-title-inline">CLOVR: Collecting and Logging OpenVR Data from SteamVR Applications</span>
+              <span class="pub-authors-inline">Esteban Segarra Martinez, <strong>Ayesha A. Malik</strong>, Ryan P. McMahan</span>
+              <a href="https://ieeexplore.ieee.org/document/10536207" target="_blank" class="pub-link-inline">View Paper →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- Footer -->
